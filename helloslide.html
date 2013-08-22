@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello Slide</title> 
+	
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+ 
+      <link rel="stylesheet" href="css/themes/swatcheff.css" />
+       
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+    
+ <script type="text/javascript">
+     $('div.ui-page').live("swipeleft", function(){
+    var nextpage = $(this).next('div[data-role="page"]');
+    // swipe using id of next page if exists
+    if (nextpage.length > 0) {
+    $.mobile.changePage(nextpage, 'slide');
+    }
+    });
+    $('div.ui-page').live("swiperight", function(){
+    var prevpage = $(this).prev('div[data-role="page"]');
+    // swipe using id of next page if exists
+    if (prevpage.length > 0) {
+    $.mobile.changePage(prevpage, {transition:"slide", reverse:true});
+    }
+    });
+ </script>
+ 
+ <script type="text/javascript"> 
+$( function() {
+  $('body').bind( 'taphold', function( e ) {
+    alert( 'You tapped and held!' );
+    e.stopImmediatePropagation();
+    return false;
+  } ); 
+} );
+
+$( function () {
+  $("#verify").click( function()
+    {
+       alert('button clicked');
+     });
+});
+		</script>
+    
+</head> <body> 
+
+<!-- Start of first page -->
+<div data-role="page" id="page1">
+
+	<div data-role="header">
+		<h1>Slide page example, Page 1</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm first in the source order so I'm shown as PAGE ONE.</p>
+        <p><a href="#page2" data-role="button">To Page 2</a> 		
+        <p><a href="#page3" data-role="button">To Page 3</a> 		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer 1</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of second page -->
+<div data-role="page" id="page2">
+
+	<div data-role="header">
+		<h1>Slide page example, Page 2</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if
+        you can get to me by swiping.</p>
+        
+        
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Slide page example, Page 3</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="page3">
+
+	<div data-role="header">
+		<h1>Page 3</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm the THIRD page so you can tell if you swiped left or right!</p>
+        <p><a href="#page1" data-role="button" data-inline='true' >To Page 1</a> 			
+      	<a href="#page2" data-role="button" data-inline='true' >To Page 2</a> 	
+        </p>
+        <p>		
+    <input
+    type="button"
+    name="verify"
+    id="verify"
+    data-icon="arrow-r"
+    data-iconpos="right"
+    data-theme="a"
+    value="VERIFY" />
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer 3</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

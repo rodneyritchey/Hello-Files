@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hello 3 Controls Swatch</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+        
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" / >
+    
+      <!-- the swatcheff theme defines swatch 'f' with an aqua header color -->
+      <link rel="stylesheet" href="css/themes/swatcheff.css" />   
+      <!-- the redhead theme redefines the header color for swatch 'a' as red -->
+      <link rel="stylesheet" href="css/themes/redhead.css" />
+      <!-- CAUTION: The two css above REPEAT many styles, and thus overlay what comes above -->
+      
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header" data-theme="f">
+		<h1>Hello 3 Controls - Swatch Experiments</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+
+        <ul data-role="listview" data-inset="true" data-filter="true">
+            <li><a href="#">Acura</a></li>
+            <li><a href="#">Audi</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">Cadillac</a></li>
+            <li><a href="#">Ferrari</a></li>
+        </ul>
+        <form>
+           <label for="slider-0">Input slider:</label>
+           <input type="range" name="slider" id="slider-0" value="25" min="0" max="100"  />
+           
+           
+			<a href="#" data-role="button" data-icon="star">Star button</a>
+        </form>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>
